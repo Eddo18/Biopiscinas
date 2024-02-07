@@ -1,0 +1,24 @@
+{
+    "hosting": [{
+        "target": "biopiscinas",
+        "public": "web/priv/static/",
+        "rewrites": [{
+                "source": "/cusros",
+                "destination": "/cursos.html"
+            },
+            {
+                "source": "/contacto",
+                "destination": "/contacto.html"
+            },
+            {
+                "source": "/quienes_somos",
+                "destination": "/quienes_somos.html"
+            }
+        ],
+        "ignore": [
+            "firebase.json",
+            "**/.*",
+            "**/node_modules/**"
+        ]
+    }]
+}

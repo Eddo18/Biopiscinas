@@ -1,0 +1,33 @@
+{
+  "projects": {
+    "comsis": "encouraging-mix-111109"
+  },
+  "targets": {
+    "encouraging-mix-111109": {
+      "hosting": {
+        "biopiscinas": [
+          "biopiscinas"
+        ]
+      }
+    },
+    "biopiscinas": {
+      "hosting": {
+        "biopiscinas": [
+          "biopiscinas"
+        ]
+      }
+    }
+  },
+  "etags": {},
+  "hosting": [
+    {
+      "target": "biopiscinas",
+      "public": "web/priv/static/",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ]
+    }
+  ]
+}
