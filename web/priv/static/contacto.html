@@ -107,11 +107,17 @@
     </div>
   </div>
 </div>
-  <div class="flex justify-center">
+
+<div class="flex justify-center">
   <div class="w-6/12">
    <div class="container mx-auto flex justify-between ">
-      <div class="text-center text-xs font-bold leading-tight text-gray-800 opacity-60 pl-8">First Name</div>
-      <div class="pr-52 text-xs font-bold leading-tight text-gray-800 opacity-60 ">Last Name</div>
+      <div class="text-center text-xs font-bold leading-tight text-gray-800 opacity-60 pl-8">Primer Nombre
+        <input id="primernombre">
+      </div>
+ 
+      <div class="pr-40 text-xs font-bold leading-tight text-gray-800 opacity-60 ">Apellidos
+        <input id="apellidos"> 
+      </div>
     </div>
 
     <div class="container mb-10 flex justify-between pl-10 -mt-4">
@@ -120,8 +126,12 @@
     </div>
 
      <div class="container flex justify-between ">
-      <div class="pl-10 pr-20 text-xs font-bold leading-tight text-gray-800 opacity-60">Email ID</div>
-      <div class="pr-52 text-xs font-bold leading-tight text-gray-800 opacity-60">Subject</div>
+      <div class="pl-10 pr-20 text-xs font-bold leading-tight text-gray-800 opacity-60">Correo
+        <input type="correo">
+      </div>
+      <div class="pr-40 text-xs font-bold leading-tight text-gray-800 opacity-60">Asunto
+        <input id="asunto">
+      </div>
     </div>
 
     <div class="container mb-10 flex justify-between pl-10 -mt-4">
@@ -130,18 +140,20 @@
     </div>
 
     <div class="container mb-5 flex justify-between">
-      <div class="pl-10 text-xs font-bold leading-tight text-gray-800 opacity-60">Message</div>
+      <div class="pl-10 text-xs font-bold leading-tight text-gray-800 opacity-60">Mensaje
+        <input id="mensaje">
+      </div>
     </div>
 
     <div>
       <div class="flex justify-center container mx-auto mb-5 h-40 pl-10">
         <textarea class="h-full w-full  p-5 text-base opacity-30 border border-black rounded" id="story" name="story" cols="33">
-Type your Message
+Escribe tu mensaje...
 </textarea
         >
       </div>
     </div>
-    <div class="flex justify-center"><button type="button" class="mb-20 me-2 ml-10 flex rounded-lg bg-amber-300 px-5 py-2.5 text-base font-medium text-black hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 dark:focus:ring-yellow-900">Send message</button> </div>
+    <div class="flex justify-center"><button type="button" class="mb-20 me-2 ml-10 flex rounded-lg bg-amber-300 px-5 py-2.5 text-base font-medium text-black hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 dark:focus:ring-yellow-900">Envíar Mensaje</button> </div>
   </div>
   </div>
   </div>
@@ -157,17 +169,17 @@ Type your Message
       </div>
       
       <div class="flex w-2/12 flex-col gap-5 pt-2">
-        <a class="font-semibold"> Connect </a>
+        <a class="font-semibold"> ¡Conecta con Nosotros! </a>
         <a class="font-light" href="https://www.facebook.com/arquitecturaenarmonia" target="_blanc" > Facebook </a>
         <a class="font-light" href="https://www.instagram.com/arquitectura_armonia/" target="_blanc"> Instagram </a>
       </div>
       <div class="flex w-4/12 flex-col -py-">
-        <div class="mb-10 flex-1 text-4xl font-semibold leading-snug">Subscribe to get latest <br />updates</div>
+        <div class="mb-10 flex-1 text-4xl font-semibold leading-snug">Suscribete para recibir información 
         <div class="flex-1">
           <form class="">
             <div class="flex">
-              <input type="text" id="website-admin" class="block w-full min-w-0 flex-1 rounded-none rounded-s border border-gray-700 bg-black px-6 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500" placeholder="Your email" />
-              <button type="submit" class="inline-flex items-center rounded-e border border-e-0 border-gray-300 bg-gray-200 px-6 py-5 text-sm text-gray-900">Subscribe</button>
+              <input type="text" id="website-admin" class="block w-full min-w-0 flex-1 rounded-none rounded-s border border-gray-700 bg-black px-6 text-sm text-gray-900 focus:border-blue-500 focus:ring-blue-500" placeholder="Tu correo" />
+              <button type="submit" class="inline-flex items-center rounded-e border border-e-0 border-gray-300 bg-gray-200 px-6 py-5 text-sm text-gray-900">Suscribete</button>
           </div>
         </form>
       </div>
@@ -175,9 +187,52 @@ Type your Message
   </div>
 </div>
  </form>
-        </div>
       </div>
     </div>
+</div>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script>// WARNING: For POST requests, body is set to null by browsers.       
+      let loginForm = document.getElementById("send-message");
+      $('#send-success').fadeOut(1);
+  
+      loginForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+          var settings = {
+              "url": "https://us-central1-encouraging-mix-111109.cloudfunctions.net/contact_email/send-message",
+              "method": "POST",
+              "timeout": 0,
+              "headers": {
+                  "Content-Type": "application/json"
+              },
+              "data": JSON.stringify({
+                  "primernombre": document.getElementById("primernombre").value,
+                  "apellidos": document.getElementById("apellidos").value,
+                  "correo": document.getElementById("correo").value,
+                  "asunto": document.getElementById("asunto").value,
+                  "mensaje": document.getElementById("mensaje").value,
+                  "message": "Mensaje desde la página: " + document.getElementById("comment").value +
+                      "\n primernombre: " + document.getElementById("primernombre").value +
+                      "\n apellidos: " + document.getElementById("apellidos").value +
+                      "\n correo: " + document.getElementById("correo").value +
+                      "\n asunto: " + document.getElementById("asunto").value +
+                      "\n mensaje: " + document.getElementById("mensaje").value,
+                  "token_hash": "d4cb0b2f-ef4b-478c-bca0-0b5f636f63c0"
+              }),
+          };
+          $.ajax(settings).done(function(response) {
+              console.log(response);
+              $('.loading-area').fadeOut(1000);
+              $('#send-success').fadeIn(1000);
+              $('#primernombre').val("");
+              $('#apellidos').val("");
+              $('#correo').val("");
+              $('#asunto').val("");
+              $('#mensaje').val("");
+          });
+          });
+          
+      
+  </script>
   </body>
 </html>
 
