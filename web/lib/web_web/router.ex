@@ -17,7 +17,11 @@ defmodule WebWeb.Router do
   scope "/", WebWeb do
     pipe_through :browser
 
-    get "/", PageController, :home
+    #get "/", PageController, :home
+    get "/", PageController, :index #Copiar esta
+    get "/contacto", PageController, :contacto #Copiar esta
+    get "/cursos", PageController, :cursos #Copiar esta
+    get "/quienes_somos", PageController, :quienes_somos #Copiar esta
     get "/tests", TetController, :index
   end
 
