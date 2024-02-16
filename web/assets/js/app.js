@@ -67,3 +67,47 @@ const album = {
 
 
 window.album = album;
+
+
+let loginForm = document.getElementById("contacto");
+$('#send-success').fadeOut(1); 
+$('#loading-enviado').fadeOut(1);
+console.log('estaaaaa', loginForm);
+loginForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    var settings = {
+        "url": "https://us-central1-encouraging-mix-111109.cloudfunctions.net/contact_email/send-message",
+        "method": "POST",
+        "timeout": 0,
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "data": JSON.stringify({
+            "name": document.getElementById("nombre").value,
+            "lastname": document.getElementById("apellidos").value,
+            "email": document.getElementById("correo").value,
+            "asunto": document.getElementById("asunto").value,
+            "mensaje": document.getElementById("mensaje").value,
+            "message": "Mensaje desde la página: Desde CONCOMSIS " + document.getElementById("mensaje").value +
+                "\n Nombre: " + document.getElementById("nombre").value +
+                "\n Apellidos: " + document.getElementById("apellidos").value +
+                "\n Correo: " + document.getElementById("correo").value +
+                "\n Asunto: " + document.getElementById("asunto").value +
+                "\n Mensaje: " + document.getElementById("mensaje").value,
+            "token_hash": "a1929158-c7d9-4c04-85de-c3163bbaaeae"
+        }),
+    };
+    $('#contacto').fadeOut(800);
+    $('#loading-enviado').fadeIn(800);
+    $.ajax(settings).done(function(response) {
+        console.log(response);
+        $('#loading-enviado').fadeOut(500);
+        $('.loading-area').fadeOut(1000);
+        $('#send-success').fadeIn(1000);
+        $('#nombre').val("");
+        $('#apellidos').val("");
+        $('#correo').val("");
+        $('#asunto').val("");
+        $('#mensaje').val("");
+    });
+});
