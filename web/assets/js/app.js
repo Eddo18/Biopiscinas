@@ -41,3 +41,29 @@ liveSocket.connect()
 // >> liveSocket.enableLatencySim(1000)  // enabled for duration of browser session
 // >> liveSocket.disableLatencySim()
 window.liveSocket = liveSocket
+
+
+
+const album = {
+    open: (img) => {
+        const div = window.document.getElementById('album_zoom');
+        const target = window.document.getElementById('album_target');
+        target.src = img;
+        if (div.classList.contains('hidden')) {
+            div.classList.remove('hidden');
+        } else {
+            div.classList.add('hidden');
+        }
+    },
+    videoOpen: (target) => {
+        const div = window.document.getElementById(target);
+        if (div.classList.contains('hidden')) {
+            div.classList.remove('hidden');
+        } else {
+            div.classList.add('hidden');
+        }
+    }
+};
+
+
+window.album = album;
