@@ -62,6 +62,15 @@ const album = {
         } else {
             div.classList.add('hidden');
         }
+    },
+    openmenu: (target) => { // Hola
+        console.log(target);
+        const div = window.document.getElementById(target);
+        if (div.classList.contains('hidden')) {
+            div.classList.remove('hidden');
+        } else {
+            div.classList.add('hidden');
+        }
     }
 };
 
