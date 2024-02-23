@@ -35,7 +35,7 @@
               </li>
             </ul>
           </div>
-          <div class="flex space-x-3 md:space-x-0 rtl:space-x-reverse" id="openmenudif">
+          <div class="flex space-x-3 md:space-x-0 rtl:space-x-reverse relative">
             <a href="contacto.html" class="roun ded -dark:bg-blue-600 -dark:hover:bg-blue-700 -dark:focus:ring-blue-800 bg-slate-800 px-8 py-3 text-center text-sm font-medium text-white hover:bg-red-800 focus:outline-none focus:ring-4 focus:ring-orange-300">Contacto</a>
             <button data-collapse-toggle="navbar-cta" type="button" class="-dark:text-gray-400 -dark:hover:bg-gray-700 -dark:focus:ring-gray-600 inline-flex h-10 w-10 items-center justify-center rounded-lg p-2 text-sm text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 md:hidden" onclick="window.album.openmenu('openmenudif')"  aria-controls="navbar-cta" aria-expanded="false">
               <span class="sr-only">Open main menu</span>
@@ -43,6 +43,11 @@
                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 1h15M1 7h15M1 13h15" />
               </svg>
             </button>
+            <div class="fixed  z-20 bg-blue-800 h-39 w-40 top-12 left-28 shadow-lg rounded-3xl absolute hidden"id="openmenudif">
+              <a href="index.html" class="hover:bg-blue-900 block rounded px-3 py-2 font-semibold text-white ">Home</a>
+              <a href="cursos.html" class="hover:bg-blue-900 block rounded px-3 py-2 font-semibold text-white">Cursos</a>
+              <a href="quienes_somos.html" class="hover:bg-blue-900 block rounded px-3 py-2 font-semibold text-white">¿Quienes Somos?</a>
+            </div>
           </div>
           <a href="." class="md:flex items-center space-x-3 rtl:space-x-reverse">
             <img class="h-16 hidden md:inline" src="https://github.com/Eddo18/Biopiscinas/blob/main/img/LOGO%20BIOPISCINAS%20AMEYALLI.png?raw=true"/>
