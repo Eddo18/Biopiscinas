@@ -188,45 +188,7 @@
     </div>
 </div>
     <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-    <script>// WARNING: For POST requests, body is set to null by browsers.       
-      let loginForm = document.getElementById("send-message");
-      $('#send-success').fadeOut(1);
-  
-      loginForm.addEventListener("submit", (e) => {
-          e.preventDefault();
-          var settings = {
-              "url": "https://us-central1-encouraging-mix-111109.cloudfunctions.net/contact_email/send-message",
-              "method": "POST",
-              "timeout": 0,
-              "headers": {
-                  "Content-Type": "application/json"
-              },
-              "data": JSON.stringify({
-                  "primernombre": document.getElementById("primernombre").value,
-                  "apellidos": document.getElementById("apellidos").value,
-                  "correo": document.getElementById("correo").value,
-                  "asunto": document.getElementById("asunto").value,
-                  "mensaje": document.getElementById("mensaje").value,
-                  "message": "Mensaje desde la página: " + document.getElementById("comment").value +
-                      "\n primernombre: " + document.getElementById("primernombre").value +
-                      "\n apellidos: " + document.getElementById("apellidos").value +
-                      "\n correo: " + document.getElementById("correo").value +
-                      "\n asunto: " + document.getElementById("asunto").value +
-                      "\n mensaje: " + document.getElementById("mensaje").value,
-                  "token_hash": "d4cb0b2f-ef4b-478c-bca0-0b5f636f63c0"
-              }),
-          };
-          $.ajax(settings).done(function(response) {
-              console.log(response);
-              $('.loading-area').fadeOut(1000);
-              $('#send-success').fadeIn(1000);
-              $('#primernombre').val("");
-              $('#apellidos').val("");
-              $('#correo').val("");
-              $('#asunto').val("");
-              $('#mensaje').val("");
-          });
-          });
+    <script>// WARNING: For POST requests, body is set to null by browsers.      
           
       
   </script>
