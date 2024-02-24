@@ -80,34 +80,35 @@ window.album = album;
 
 let loginForm = document.getElementById("send-message");
 loginForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-  $('#send-message').fadeOut(500);
-  $('#submit-message').fadeIn(500);
-  var settings = {
-    "url": "https://us-central1-encouraging-mix-111109.cloudfunctions.net/contact_email/send-message",
-    "method": "POST",
-    "timeout": 0,
-    "headers": {
-      "Content-Type": "application/json"
-    },
-    "data": JSON.stringify({
-      "name": document.getElementById("form-name").value,
-      "lastname": document.getElementById("form-lastname).value,
-      "email": document.getElementById("form-email").value,
-      "asunto": document.getElementById("form-asunto").value,
-      "message": "Mensaje desde la página: " + document.getElementById("form-message").value,
-      "token_hash": "20443c7b-6063-4607-9479-c69fd83790fd"
-    }),
-  };
-  $.ajax(settings).done(function(response) {
-    console.log(response);
-    $('.loading-area').fadeOut(1000);
-    $('#submit-message').fadeOut(500);
-    $('#send-success').fadeIn(1000);
-    $('#form-name').val("");
-    $('#form-lastname').val("");
-    $('#form-email').val("");
-    $('#form-asunto').val("");
-    $('#form-message').val("");
-  });
+    e.preventDefault();
+    $('#send-message').fadeOut(500);
+    $('#submit-message').fadeIn(500);
+    var settings = {
+        "url": "https://us-central1-encouraging-mix-111109.cloudfunctions.net/contact_email/send-message",
+        "method": "POST",
+        "timeout": 0,
+        "headers": {
+            "Content-Type": "application/json"
+        },
+        "data": JSON.stringify({
+            "name": document.getElementById("form-name").value,
+            "lastname": document.getElementById("form-lastname").value,
+            "email": document.getElementById("form-email").value,
+            "asunto": document.getElementById("form-asunto").value,
+            "message": "Mensaje desde la página: " + document.getElementById("form-message").value,
+            "token_hash": "20443c7b-6063-4607-9479-c69fd83790fd"
+        }),
+    };
+    console.log(settings);
+    $.ajax(settings).done(function(response) {
+        console.log(response);
+        $('.loading-area').fadeOut(1000);
+        $('#submit-message').fadeOut(500);
+        $('#send-success').fadeIn(1000);
+        $('#form-name').val("");
+        $('#form-lastname').val("");
+        $('#form-email').val("");
+        $('#form-asunto').val("");
+        $('#form-message').val("");
+    });
 });

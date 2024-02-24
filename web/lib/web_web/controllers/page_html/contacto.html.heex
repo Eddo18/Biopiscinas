@@ -68,64 +68,61 @@
 
 <div class="container mx-auto p-16">
     <div class="flex">
-      <div class="w-8/12 h-12 bg-blue-200 rounded justify-center items-center text-center hidden" id="submit-message">
+      <div class="w-full md:w-8/12 h-12 bg-blue-200 rounded justify-center items-center text-center hidden" id="submit-message">
         Enviando Mensaje.
       </div>
     </div>
     <div class="flex">
-      <div class="w-8/12 h-12 bg-green-200 rounded justify-center items-center text-center hidden" id="send-success">
+      <div class="w-full md:w-8/12 h-12 bg-green-200 rounded justify-center items-center text-center hidden" id="send-success">
         Mensaje Enviado.
-    </div>
-    <form class="w-full max-w-lg" id="send message"> 
-    </form>
+      </div>
     </div>
 </div>
 
-<div class="md:flex justify-center">
+<form class="md:flex justify-center" id="send-message">
     <div class="md:w-6/12">
           
-        <div class="container mx-auto flex justify-between ">
-            <div class="md:pl-10 pr-20 text-xs font-bold leading-tight text-gray-800 opacity-60">Primer Nombre
-            </div>
-            
 
-            <div class="pr-28 md:pr-56 text-xs font-bold leading-tight text-gray-800 opacity-60 ">Apellidos  
+        <div class="md:container mb-10 justify-between flex  -mt-4 gap-3 ">
+            <div class="flex-1 flex flex-col">
+              <label class=" text-xs font-bold leading-tight text-gray-800 opacity-60" for="form-name" >Primer Nombre
+              </label>
+              <input class="mt-8  border-b border-black rounded" id="form-name" name="" type="text" placeholder="Jane">
             </div>
-        </div>
+            <div class="flex-1 flex flex-col">
 
-        <div class="md:container mb-10 justify-between flex md:pl-10 -mt-4 gap-3">
-            <input class="mt-8 pl-6 w-44 md:w-6/12 border-b border-black rounded" id="form-name" name="" type="text" placeholder="Jane">
-            <input class="mt-8 pl-6 w-44 md:w-6/12 border-b border-black rounded" id="form-lastname" name="" type="text">
-        </div>
-
-        <div class="container flex justify-between ">
-            <div class="md:pl-10 pr-20 text-xs font-bold leading-tight text-gray-800 opacity-60">Correo
-            </div>
-            <div class="pr-28 md:pr-56 text-xs font-bold leading-tight text-gray-800 opacity-60">Asunto
+              <label class=" text-xs font-bold leading-tight text-gray-800 opacity-60 " for="form-lastname" >Apellidos  
+              </label>
+              <input class="mt-8  border-b border-black rounded" id="form-lastname" name="" type="text">
             </div>
         </div>
 
-        <div class="container mb-10 flex justify-between md:pl-10 -mt-4 gap-3">
-            <input class="mt-8 pl-6 w-44 md:w-6/12 border-b border-black rounded" id="form-email" name="" type="email" placeholder="email@gmail.com">
-            <input class="mt-8 pl-6 w-44 md:w-6/12 border-b border-black rounded" id="form-asunto" name="" type="text">
-        </div>
+        <div class="md:container mb-10 justify-between flex  -mt-4 gap-3 ">
+            <div class="flex-1 flex flex-col">
+              <label class=" text-xs font-bold leading-tight text-gray-800 opacity-60" for="form-email" >Correo
+              </label>
+              <input class="mt-8  border-b border-black rounded" id="form-email" name="" type="email" placeholder="email@gmail.com" />
+            </div>
+            <div class="flex-1 flex flex-col">
 
-        <div class="container mb-5 flex justify-between">
-            <div class="md:pl-10 text-xs font-bold leading-tight text-gray-800 opacity-60">Mensaje
-            </div> 
-        </div>
-
-        <div>
-            <div class="flex justify-center container mx-auto mb-5 h-40 md:pl-10">
-                <textarea class="h-full w-full  p-5 text-base opacity-30 border border-black rounded" id="form-message" name="" type="text" cols="33">
-Escribe tu mensaje...
-</textarea>
+              <label class=" text-xs font-bold leading-tight text-gray-800 opacity-60 " for="form-asunto" >Asunto  
+              </label>
+              <input class="mt-8  border-b border-black rounded" id="form-asunto" name="" type="text">
             </div>
         </div>
+        
+        <div class="md:container mb-10 justify-between flex  -mt-4 gap-3 ">
+            <div class="flex-1 flex flex-col border-b border-black">
+              <label class=" text-xs font-bold leading-tight text-gray-800 opacity-60">Correo
+              </label>
+                <textarea class="h-full w-full  p-5 text-base opacity-30 border-b border-black rounded" id="form-message" name="" type="text" cols="33" placeholder="Escribe tu mensaje..."></textarea>              
+            </div>
+        </div>
+
         <div class="flex justify-center">
-          <button type="button" class="mb-20 me-2 ml-10 flex rounded-lg bg-amber-300 px-5 py-2.5 text-base font-medium text-black hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 dark:focus:ring-yellow-900" type="submit"> Envíar Mensaje</button>            
+          <button type="submit" class="mb-20 me-2 ml-10 flex rounded-lg bg-amber-300 px-5 py-2.5 text-base font-medium text-black hover:bg-yellow-500 focus:outline-none focus:ring-4 focus:ring-yellow-300 dark:focus:ring-yellow-900" type="submit"> Envíar Mensaje</button>            
         </div>
     </div>
-</div>
+</form>
 
 <img class="container mx-auto" src="https://github.com/Eddo18/Biopiscinas/blob/main/img/BIOPICINAS%20MAPS.png?raw=true" alt="">
